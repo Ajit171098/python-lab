@@ -9,17 +9,26 @@ class validate:
             if i in ('{','(','['):
                l.append(i)
             elif i=='}':
-               a=l.pop()
-               if a!='{':
-                  return False
+               if len(l)!=0:
+                  a=l.pop()
+                  if a!='{':
+                     return False
+               else:
+                   return False
             elif i==')':
-               a=l.pop()
-               if a!='(':
-                  return False
+               if len(l)!=0:
+                  a=l.pop()
+                  if a!='(':
+                     return False
+               else:
+                   return False
             elif i==']':
-               a=l.pop()
-               if a!='[':
-                  return False
+               if len(l)!=0:
+                  a=l.pop()
+                  if a!='[':
+                     return False
+               else:
+                   return False
          if len(l)==0:
              return True
          else:
@@ -34,7 +43,6 @@ if n==False:
     print("string is invalid")
 else:
     print("string is valid")
-
 
 
            
